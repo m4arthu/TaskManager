@@ -3,6 +3,8 @@ namespace app\database;
 
 use PDO;
 
+// realiza a conexão com  o  banco  de dados necessário um  env na pasta public com as 
+// variáveis : DATABAE_NAME, DATABASE_USER,DATABASE_PASSWORD'
 class Connection
 {
     private static $connect = null;
