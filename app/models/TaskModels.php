@@ -51,9 +51,11 @@ class TaskModels
          // checa  se o body  foi  passado
           if (isset($taskData)) {
             // valida o  body da requisição post
-              $nameIsValid = v::key('name')->validate($taskData); 
-              $descriptionIsvalid = v::key('description')->validate($taskData);
-              $taskId =  v::key('taskId')->validate($taskData);
+              $nameIsValid = v::key('name')->validate($taskData); // se o a key nome  existe
+              $descriptionIsvalid = v::key('description')->validate($taskData); // se  a key description exste
+              $taskId =  v::key('taskId')->validate($taskData); // se a key taskId existe
+              
+              // se  não exites uma  key requerida retorna o erro  de acordo com  a necessidade
               if(!$nameIsValid){
                  return "propety name is missing";
               }
@@ -75,6 +77,7 @@ class TaskModels
                  return "data must be  a  valid date format like 'Y-m-d'";
                }
                
+               // se o nome e  a descriçao e a  data existem faz a validação  do tipo delas
               if ($nameIsValid && $descriptionIsvalid && $dateIsValid){
                  // valida se o name e a descrição  são  strings e se taskId é um numero
                   $nameFormat  = v::stringType()->validate($taskData['name']);
