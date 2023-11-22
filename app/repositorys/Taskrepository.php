@@ -5,7 +5,7 @@ use app\database\Connection;
 
 class TaskRepository
 {
-    public static function getTasks()
+    public static function getTasks() // pega todas as  tasks
     {
         $connection = Connection::getConnection();
         $prepare = $connection->prepare("select * from tbl_tasks");
@@ -14,19 +14,20 @@ class TaskRepository
         return $tasks;
     }
 
-    public static function createTask($taskData)
+    public static function createTask($taskData) // cria uma task
     {
         $connection = Connection::getConnection();
         $prepare = $connection->prepare(
             "INSERT INTO tbl_tasks (task_name, task_description, deadline)
             VALUES (:task_name, :task_description, :deadline)"
         );
-
+         // conecta as referencias da queri iniciadas com : com os dadps passados pelo parametro
         $prepare->bindParam(':task_name', $taskData['name']);
         $prepare->bindParam(':task_description', $taskData['description']);
         $prepare->bindParam(':deadline', $taskData['date']);
         $createTask = $prepare->execute();
 
+        // se  conseguir criar  retorna  true se não  retorna a mensagem de erro
         if ($createTask) {
             return true;
         } else {
@@ -35,7 +36,7 @@ class TaskRepository
 
     }
 
-    public static function updateTask($taskData)
+    public static function updateTask($taskData) // atualiza uma task
     {
         $connection = Connection::getConnection();
         // Verifique se o ID existe antes de executar a atualização
@@ -53,6 +54,7 @@ class TaskRepository
              WHERE id = :task_id"
             );
 
+            // conecta as referencias da queri iniciadas com : com os dadps passados pelo parametro
             $prepare->bindParam(':new_task_name', $taskData['name']);
             $prepare->bindParam(':new_task_description', $taskData['description']);
             $prepare->bindParam(':new_task_deadline', $taskData['date']);
@@ -71,8 +73,9 @@ class TaskRepository
 
     }
 
-    public static function deleteTask($taskId)
+    public static function deleteTask($taskId) // deleta  as tasks
     {
+        // verifica se existe  uma task  com o taskId passado
         $connection = Connection::getConnection();
         $checkIdQuery = $connection->prepare("SELECT COUNT(*) as count FROM tbl_tasks WHERE id = $taskId");
         $checkIdQuery->execute();
@@ -85,6 +88,7 @@ class TaskRepository
 
             $deleteTask = $prepare->execute();
             
+            // verifica se a operação foi  bem sucedida
             if ($deleteTask) {
                 return true;
             } else {
