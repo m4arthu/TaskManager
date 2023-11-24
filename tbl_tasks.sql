@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Nov-2023 às 01:40
+-- Tempo de geração: 24-Nov-2023 às 01:47
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -16,33 +16,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-
---
--- Banco de dados: `task_manager`
---
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tbl_lists`
---
-
-CREATE TABLE `tbl_lists` (
-  `list_id` int(10) UNSIGNED NOT NULL,
-  `list_name` varchar(50) NOT NULL,
-  `list_description` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `tbl_lists`
---
-
-INSERT INTO `tbl_lists` (`list_id`, `list_name`, `list_description`) VALUES
-(9, 'List of tasks to day 1 ', 'dwadaw'),
-(10, 'List of tasks to day 1 ', 'dwadaw'),
-(11, 'List of tasks to day 1 ', 'dwadaw');
-
--- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `tbl_tasks`
@@ -60,12 +33,6 @@ CREATE TABLE `tbl_tasks` (
 --
 
 --
--- Índices para tabela `tbl_lists`
---
-ALTER TABLE `tbl_lists`
-  ADD PRIMARY KEY (`list_id`);
-
---
 -- Índices para tabela `tbl_tasks`
 --
 ALTER TABLE `tbl_tasks`
@@ -74,12 +41,6 @@ ALTER TABLE `tbl_tasks`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
-
---
--- AUTO_INCREMENT de tabela `tbl_lists`
---
-ALTER TABLE `tbl_lists`
-  MODIFY `list_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `tbl_tasks`
