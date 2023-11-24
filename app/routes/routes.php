@@ -10,6 +10,7 @@ use Slim\Routing\RouteContext;
 
 // configurando  as rotas e os endpoinds de cada uma delas  usando  controllers
 return function (App $app) {
+    
     // perimitindo cors origin
     $app->options('/{routes:.+}', function ($request, $response, $args) {
         return $response;
