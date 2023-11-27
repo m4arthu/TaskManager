@@ -62,7 +62,7 @@ https://www.alura.com.br/artigos/primeiros-passos-com-composer?utm_term=&utm_cam
   `````
   ps: taskId precisa ser um id obtido  do get /tasks pois necessita ser existente no banco
   
-- DELETE https:// localhost:8080/tasks/:id
+- DELETE https://localhost:8080/tasks/:id
    ps: taskId precisa ser um id obtido  do get /tasks pois necessita ser existente no banco
   
   
