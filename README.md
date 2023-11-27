@@ -3,21 +3,21 @@ No dia a dia sempre tem  alguma  tarefa  importante que deixamos de fazer por n�
 os gerenciadores de  tarefa vem  com  essa primissa, uma agenda onde você pode administrar  suas tarefas e asssim nunca se  perder durante
 o dia.
 
-#Sobre
+# Sobre
 O projeto taskmanager é dividido em duas partes uma api(backend) que processa as CRUDS e  envia os resultados ao taskmanagerapp(frontend).
 Onde o usuário pode: criar,editar,deletar e receber suas atividades.
 
 #deploy:
   - https://m4arthu.space/tasks
 
-#tecnologias
+# tecnologias
  - PHP // linguagem de progamação
  - Slim // Framework para criar a api rest
  - mySQL // banco de dados
  - Docker // gerenciador de containers
  - Nginx // servidor
 
-#Como Rodar
+# Como Rodar
 - instale as dependencias : Git, Docker e Composer
 - Clone o  repositorio:
   ```````powershell
@@ -48,7 +48,7 @@ https://www.alura.com.br/artigos/primeiros-passos-com-composer?utm_term=&utm_cam
   4 - pronto tudo  certo pode acessar as rotas hehehhe!!!
 
  
- #Rotas
+ # Rotas
 - GET https://localhost:8080/tasks // retorna todas as tasks do  banco 
 - POST https://localhost:8080/tasks // envia  uma task ao  banco
   exemplo de body a ser passado:
