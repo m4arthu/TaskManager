@@ -4,7 +4,7 @@ os gerenciadores de  tarefa vem  com  essa primissa, uma agenda onde você pode 
 o dia.
 
 # Sobre
-O projeto taskmanager é dividido em duas partes uma api(backend) que processa as CRUDS e  envia os resultados ao taskmanagerapp(frontend).
+O projeto taskmanager é dividido em duas partes esta  api(backend) que processa as CRUDS e  envia os resultados ao taskmanagerapp(frontend).
 Onde o usuário pode: criar,editar,deletar e receber suas atividades.
 
 #deploy:
