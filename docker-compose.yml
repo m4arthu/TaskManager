@@ -42,6 +42,6 @@ services:
    build: ./docker/Dumper/  
    volumes:  
     - ./docker/Dumper/:/var/db/  
-   command: sh -c "sleep 20 && /usr/bin/mysql -h mysql -uroot -ppassword < /var/db/dump.sql"  
+   command: sh -c "sleep 30 && /usr/bin/mysql -h mysql -uroot -ppassword < /var/db/dump.sql"  
    depends_on:  
     - mysql 
