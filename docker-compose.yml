@@ -28,7 +28,6 @@ services:
       - ./data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=taskmanagerapi
 
   myadimin:
     image: phpmyadmin/phpmyadmin:latest
@@ -38,3 +37,11 @@ services:
       - 5000:80
     environment:
       - PMA_ARBITRARY=1
+
+  dump:  
+   build: ./docker/Dumper/  
+   volumes:  
+    - ./docker/Dumper/:/var/db/  
+   command: sh -c "sleep 20 && /usr/bin/mysql -h mysql -uroot -ppassword < /var/db/dump.sql"  
+   depends_on:  
+    - mysql 
