@@ -49,8 +49,8 @@ https://www.alura.com.br/artigos/primeiros-passos-com-composer?utm_term=&utm_cam
 
  
  # Rotas
-- GET https://localhost:8080/tasks // retorna todas as tasks do  banco 
-- POST https://localhost:8080/tasks // envia  uma task ao  banco
+- GET http://localhost:8080/tasks // retorna todas as tasks do  banco 
+- POST http://localhost:8080/tasks // envia  uma task ao  banco
   exemplo de body a ser passado:
   ````json
   {
@@ -59,7 +59,7 @@ https://www.alura.com.br/artigos/primeiros-passos-com-composer?utm_term=&utm_cam
      "date": "2020-03-02"
   }
   ````
-- PUT  https://localhost:8080/tasks
+- PUT  https//localhost:8080/tasks
     exemplo de body a ser passado:
   ````json
   {
@@ -71,7 +71,7 @@ https://www.alura.com.br/artigos/primeiros-passos-com-composer?utm_term=&utm_cam
   `````
   ps: taskId precisa ser um id obtido  do get /tasks pois necessita ser existente no banco
   
-- DELETE https://localhost:8080/tasks/:id
+- DELETE http://localhost:8080/tasks/:id
    ps: taskId precisa ser um id obtido  do get /tasks pois necessita ser existente no banco
   
   
